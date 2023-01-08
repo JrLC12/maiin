@@ -1,0 +1,28 @@
+
+    <div class="signup_container">
+        <div class="register_title"><h5>REGISTER</h5></div>
+
+        <form [formGroup]="signupForm" (ngSubmit)="register()">
+            <div class="signup_inputs" id="signup_inputs">
+                <input type="type" formControlName="first_name" placeholder="Enter first name" >
+                <input type="type" formControlName="last_name" placeholder="Enter last name"  >
+                <input type="email" formControlName="email" placeholder="Enter your email" >
+                <input type="password"  formControlName="password" id="password2" placeholder="Enter password" >
+                <input type="password" formControlName="confirm_password" id="confirm_password" placeholder="Confirm password" >
+                <i class="hide" id="eye"><button class="eye_button" type="button" onclick="hide_view()"></button></i>
+                <input type="type" formControlName="contact" placeholder="Enter your contact number" required >
+                
+                <div class="signup_submit_div"><button [disabled]="!signupForm.valid" class="signup_button" name="register" type="submit">SIGN UP</button></div>
+               <!-- VALIDATION-->
+                <span class="danger" *ngIf="signupForm.controls['first_name'].dirty && signupForm.hasError('required','first_name')">First name is required &nbsp;</span>
+                <span class="danger" style="right:0%;" *ngIf="signupForm.controls['last_name'].dirty && signupForm.hasError('required','last_name')">Last name is required</span><br>
+                <span class="danger" *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')">Email is required &nbsp;</span>
+                <span class="danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')">Password is required </span><br>
+                <span class="danger" *ngIf="signupForm.controls['confirm_password'].dirty && signupForm.hasError('required','confirm_password')">Confirm password is required &nbsp;</span>
+                <span class="danger" *ngIf="signupForm.controls['contact'].dirty && signupForm.hasError('required','contact')">Contact is required</span>
+                <!-- VALIDATION-->
+              
+            </div>
+        </form>
+        <a routerLink="/login" class="already_have_an_account">Sign In</a>
+    </div>

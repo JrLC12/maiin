@@ -1,0 +1,31 @@
+<body>
+	<div id="hideMe" class="alert">
+		<strong id="hideMe">CONTACT US</strong>
+	</div>
+	
+	<div class="contact-us-bg">
+	<div class="how-can-we-help">
+		<span>How can we help?</span>
+	</div>
+	
+		
+			
+	
+
+	<form id="to-be-scrolled" ngNoForm [action]="url" method="POST">
+		<div class="whole-container"> 
+			<input type="hidden" name="_subject" value="Question Generator.ai">
+		<input class="inputfieldname" type="text" name="sendername" id="cont_name" readonly >
+		<input class="inputfieldemail" type="email" name="senderemail" id="cont_ems" readonly>
+		<textarea  class="inputfieldmsg" name="message" placeholder="Enter text here..."></textarea>
+		<input type="hidden" name="_next" value="http://localhost:4200/thankyou">
+		<div class="send">
+			<button type="submit" class="sendbtn">SEND</button>
+		</div>
+		</div></form>
+	</div>
+	
+	
+	<div class="line-mixed">
+	</div>
+	</body>

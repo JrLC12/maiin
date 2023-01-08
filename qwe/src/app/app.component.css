@@ -1,0 +1,645 @@
+.logout{
+	cursor:pointer;
+}
+/* DROPDOWN SANA TO
+.dropdown{
+	width:20%;
+	right:-100%;
+	top:10%;
+	position:absolute;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	overflow-x:hidden;
+}
+.dropdown:hover{
+	background-color: rgba(41, 161, 47, 0.6);
+}
+.dropdown span{
+	position:inherit;
+	color:white;
+	justify-content: center;
+	text-align: center;
+}
+
+.dropdown_content{
+	display:none;
+	height:auto;
+	position:inherit;
+	width:100%;
+	transform: translate(10%,30%);
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	background-color: green;
+}
+.dropdown_content a:nth-child(1){
+	height:100%;
+	width:100%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	position:inherit;
+	background-color: transparent;
+}
+.dropdown_content a:nth-child(1):hover{
+	background-color: #2cbd0f;
+	color:white;
+}
+.dropdown_content a:nth-child(2){
+	border-top:2px solid white;
+	height:100%;
+	width:100%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	position:inherit;
+	background-color: transparent;
+}
+.dropdown_content a:nth-child(2):hover{
+	background-color: #2cbd0f;
+}*/
+/*QG LOGO ANIMATION */
+.navbar-brand span:nth-child(1){
+	position:absolute;
+	top:1%;
+	opacity:1;
+	font-size:3vw;
+	color:#2cbd0f;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	animation: span_q 1s,span_q2 4s;
+  	animation-direction: normal;
+}
+@keyframes span_q{
+	0%{
+		top:100%;
+		opacity:0;
+	}
+}
+
+@keyframes span_q2{
+	0%{
+		color:#fff;
+	}
+	25%{
+		color:#fff;
+	}
+	50%{
+		color:#fff;
+	}
+	75%{
+		color:#fff;
+	}
+
+	100%{
+		color:#2cbd0f;
+	}
+}
+.navbar-brand span:nth-child(2){
+	position:absolute;
+	top:1%;
+	left:4.5%;
+	opacity:1;
+	color:#2cbd0f;
+	font-size:3vw;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	animation: span_g 2s,span_g1 3s,span_g2 4s;
+  	animation-direction: normal;
+}
+@keyframes span_g{
+	0%{
+		top:100%;
+		opacity:0;
+		
+	}
+	50%{
+		top:1%;
+		opacity:1;
+	}
+	75%{
+		top:1%;
+		opacity:1;
+	}
+	100%{
+		top:1%;
+		opacity:1;
+	}
+}
+
+@keyframes span_g1{
+	0%{
+		left:15%;
+		
+	}
+	50%{
+		left:15%;
+	}
+	75%{
+		left:15%;
+	}
+	100%{
+		left:4.5%;
+	}
+}
+@keyframes span_g2{
+	0%{
+		color:#fff;
+	}
+	25%{
+		color:#fff;
+	}
+	50%{
+		color:#fff;
+	}
+	75%{
+		color:#fff;
+	}
+
+	100%{
+		color:#2cbd0f;
+	}
+}
+.navbar-brand span:nth-child(3){
+	position:absolute;
+	top:1%;
+	left:4.5%;
+	opacity:0;
+	font-size:3vw;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	animation: span_uestion 1s,span_uestion2 2s;
+  	animation-direction: normal;
+}
+@keyframes span_uestion {
+	0%{
+		top:100%;
+		opacity:1;
+	}
+}
+@keyframes span_uestion2 {
+	0%{
+		left:4.5%;
+		opacity:1;
+	}
+	50%{
+		left:4.5%;
+		opacity:1;
+	}
+	75%{
+		left:4.5%;
+		opacity:1;
+	}
+	100%{
+		left:2.5%;
+		opacity:0;
+	}
+}
+
+
+.navbar-brand span:nth-child(4){
+	position:absolute;
+	top:1%;
+	left:17%;
+	opacity:0;
+	font-size:3vw;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	animation: span_enerator 2s,  span_enerator2 2s;
+  	animation-direction: normal;
+}
+@keyframes span_enerator {
+
+	0%{
+		top:100%;
+		opacity:0;
+	}
+	50%{
+		top:1%;
+		opacity:1;
+	}
+	75%{
+		top:1%;
+		opacity:1;
+	}
+	100%{
+		top:1%;
+		opacity:1;
+	}
+
+}
+
+@keyframes span_enerator2 {
+	0%{
+		left:17%;
+		opacity:1;
+	}
+	50%{
+		left:17%;
+		opacity:1;
+	}
+	75%{
+		left:17%;
+		opacity:1;
+	}
+	100%{
+		left:15%;
+		opacity:0;
+	}
+}
+/*QG LOGO ANIMATION */
+/*TUTORIAL FAKE BUTTON GET STARTED*/
+.get_started_fake_btn{
+	width:13.5%;
+	background: #007536;
+	color: white;
+	margin-top:27.5%;
+	margin-left:16%;
+	font-weight: 300;
+}
+.get_started_fake_btn:hover{
+	background: transparent;
+	color:#90EE90;
+	cursor:pointer;
+}
+/*TUTORIAL FAKE BUTTON GET STARTED*/
+.close_tutorial{
+	height:5%;
+	width:15%;
+	position:fixed;
+	bottom:4%;
+	left:2%;
+	background:#007536;
+	caret-color:transparent;
+}
+.close_tutorial:hover{
+	background:gray;
+}
+.close_tutorial button{
+	color:white;
+	font-family:"monospace", courier new;
+	height:100%;
+	width:100%;
+	outline:none;
+	border:none;
+	background:transparent;
+}
+.cursor_custom{
+	z-index:999;
+	position:fixed;
+	background:#2cbd0f;
+	width:8px;
+	height:5px;
+	border-radius:50%;
+	cursor:none;
+	pointer-events:none;
+	box-shadow: 0 0 20px #2cbd0f,0 0 60px #2cbd0f,0 0 100px #2cbd0f;
+	transform:translate(-50%,-50%);
+	animation: colors 5s infinite;
+	transition:0.15s ease;
+	display:none;
+}
+.cursor_custom:before{
+	content:"";
+	position:Absolute;
+	width:0px;
+	height:0px;
+	border-radius:50%;
+	background:#90EE90;
+	opacity:0.09;
+	transform:translate(-40%,-50%);
+}
+.About:hover ~ .cursor_custom{
+	background:#2cbd0f;
+	color:#2cbd0f;
+	mix-blend-mode:lighten;
+}
+/*---------------------------------------------------SA FOCUSING NG TUTORIAL----------------------------------------------------*/
+.focus_get_started{
+	height:217%;
+	display:none;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:rgb(0,0,0,0.5);
+	padding:0;
+	z-index:3;
+	border:2px solid black;
+}
+.focus_get_started_next{
+	height:217%;
+	display:none;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:transparent;
+	padding:0;
+	z-index:3;
+	border-top:700px solid rgb(0,0,0,0.8);
+	border-left:30px solid rgb(0,0,0,0.8);
+	border-right:30px solid rgb(0,0,0,0.8);
+	border-bottom:50px solid rgb(0,0,0,0.8);
+}
+.focus_get_started_next2{
+	height:217%;
+	display:none;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:transparent;
+	padding:0;
+	z-index:3;
+	border-top:700px solid rgb(0,0,0,0.8);
+	border-left:30px solid rgb(0,0,0,0.8);
+	border-right:620px solid rgb(0,0,0,0.8);
+	border-bottom:200px solid rgb(0,0,0,0.8);
+}
+.focus_get_started_next3{
+	height:217%;
+	display:none;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:transparent;
+	padding:0;
+	z-index:3;
+	border-top:1080px solid rgb(0,0,0,0.8);
+	border-left:55px solid rgb(0,0,0,0.8);
+	border-right:1020px solid rgb(0,0,0,0.8);
+	border-bottom:144px solid rgb(0,0,0,0.8);
+}
+.focus_get_started_next4{
+	height:217%;
+	display:none;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:transparent;
+	padding:0;
+	z-index:3;
+	border-top:1140px solid rgb(0,0,0,0.8);
+	border-left:55px solid rgb(0,0,0,0.8);
+	border-right:660px solid rgb(0,0,0,0.8);
+	border-bottom:90px solid rgb(0,0,0,0.8);
+}
+.focus_get_started_next5{
+	height:217%;
+	display:none;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:transparent;
+	padding:0;
+	z-index:3;
+	border-top:705px solid rgb(0,0,0,0.8);
+	border-left:635px solid rgb(0,0,0,0.8);
+	border-right:30px solid rgb(0,0,0,0.8);
+	border-bottom:70px solid rgb(0,0,0,0.8);
+}
+
+.focus_get_started_next6{
+	height:217%;
+	display:none;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background:transparent;
+	padding:0;
+	z-index:3;
+	border-top:1145px solid rgb(0,0,0,0.8);
+	border-left:1157px solid rgb(0,0,0,0.8);
+	border-right:79px solid rgb(0,0,0,0.8);
+	border-bottom:81px solid rgb(0,0,0,0.8);
+}
+/*---------------------------------------------------SA FOCUSING NG TUTORIAL----------------------------------------------------*/
+/*---------------------------------------------------TRANSITIONS-SA-BABA----------------------------------------------------*/
+.logout{
+	display:block;
+	animation: fadeinlogout ease 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeinlogout {
+    0% {
+        opacity: 0;
+	
+    }
+    100% {
+        opacity: 1;
+     }
+}
+.home{
+	animation: fadeInhome ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInhome {
+    0% {
+        opacity: 0;
+	
+    }
+    100% {
+        opacity: 1;
+     }
+}
+.About{
+	animation: fadeInAbout ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAbout {
+    0% {
+        opacity: 0;
+	
+    }
+    100% {
+        opacity: 1;
+     }
+}
+.Contact{
+	animation: fadeInContact ease 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInContact {
+    0% {
+        opacity: 0;
+	
+    }
+    100% {
+        opacity: 1;
+     }
+}
+.Generate{
+	animation: fadeInGenerate ease 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInGenerate {
+    0% {
+        opacity: 0;
+		
+	
+    }
+    100% {
+        opacity: 1;
+	
+     }
+}
+
+.olfupng{
+	animation: fadeInolfupng ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInolfupng {
+    0% {
+        opacity: 0;
+	
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.Questions{
+	animation: fadeInQuestions ease 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInQuestions {
+    0% {
+        opacity: 0;
+		margin-top:-1%;
+    }
+    100% {
+        opacity: 1;
+		margin-top:0%;
+     }
+}
+/*---------------------------------------------------TRANSITIONS-SA-TAAS----------------------------------------------------*/
+#header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../img/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment:fixed;
+  width: 100%;
+  height: 100vh;
+ 
+}
+.olfupng{
+	background:url("olfu.png");
+	background-size:contain;
+	background-position:center;
+	background-repeat:no-repeat;
+	height:100%;
+	width:50%;
+	position:absolute;
+	top:20%;
+	left:-10%;
+}
+body, html {
+  height: 100%;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../img/bg.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.act,
+.navbar ul li a:hover {
+  color: #007536 !important;
+}
+.theme-text {
+  color: #90EE90;
+}
+
+.text-box h1 {
+	font-size: 50px;
+}
+
+#butt{
+	float: right;
+	width: 30%;
+}
+
+.text-box{
+	margin-top: 15%;
+	font-size: 17px;
+	letter-spacing: 1px;
+	line-height: 26px;
+	width:65%;
+}
+
+
+.text-box p{
+	margin-top: 20px;
+	color: white;
+	word-wrap: break-word;
+}
+
+.text-box a{
+	display: inline-block;
+	border-radius: 6px;
+	border: 2px solid #90EE90;
+	color: #fff;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+.text-box a:hover{
+	color: #fff !important;
+	background-color:#007536;
+}
+.text-box .button{
+	background: #007536;
+	color: #fff;
+	margin-left: 10px;
+	font-weight: 600;
+}
+.text-box .button:hover{
+	background: transparent;
+	color:#90EE90 !important;
+	cursor:pointer;
+}
+/*.back{
+	height:5%;
+	display:none;
+	width:15%;
+	position:fixed;
+	bottom:4%;
+	left:20%;
+	background:#007536;
+}
+.back:hover{
+	background:gray;
+}
+.back button{
+	color:white;
+	font-family:"monospace", courier new;
+	height:100%;
+	width:100%;
+	outline:none;
+	border:none;
+	background:transparent;
+}*/

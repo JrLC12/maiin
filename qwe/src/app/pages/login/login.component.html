@@ -1,0 +1,31 @@
+
+    <div class="signin_container">
+        <!--<div class="text-box">
+            <a class="button" href="http://127.0.0.1:5000/" role="button">Go to summarizer</a>
+        </div>-->
+        <div class="login_title"><h5>LOGIN</h5></div>
+
+        <form [formGroup] = "loginForm" (ngSubmit)="login()">
+            <div class="login_inputs" id="login_inputs">
+                
+                <input type="email" formControlName="email" placeholder="Enter your email">
+                <span class="danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">Email is required</span>
+
+                <input type="password" formControlName ="password" id="password" placeholder="Enter your password">
+                <span class="danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">Password is required</span>
+
+                <div class="show_password">
+                    <label onclick="show_password()" class="checkbox_control">	
+                        <input id="show_password"  type="checkbox" >
+                    </label>
+                    <span>Show Password </span>
+                </div>
+                <div class="login_submit_div"><button [disabled]="!loginForm.valid" class="login_button" name="login" type="submit">LOG IN </button></div>
+            
+            </div>
+        </form>
+        <a routerLink="/register" class="dont_have_an_account_yet">Sign Up</a>
+        
+    </div>
+
+   

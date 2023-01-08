@@ -1,0 +1,310 @@
+/*FREE SERVICE & GO TO SUMMARIZER
+.free_service{
+	height:50%;
+	width:100%;
+	position:absolute;
+	background: transparent;
+	margin-bottom: 20%;
+	top:20%;
+}
+
+.text-box{
+	font-size: 17px;
+	letter-spacing: 1px;
+	line-height: 26px;
+	width:100%;
+	height:20%;
+	position:absolute;
+	z-index:2;
+	transform: translate(-117%,335%);
+	overflow-y: hidden;
+	animation: gotosummarizer ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+	
+}
+
+.text-box:hover{
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.text-box a{
+	display: inline-block;
+	border-radius: 6px;
+	border: 2px solid #90EE90;
+	color: #fff;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+.text-box a:hover{
+	color: #90EE90 !important;
+}
+.text-box .button{
+	background: #007536;
+	color: #fff;
+	margin-left: 10px;
+	font-weight: 600;
+}
+.text-box .button:hover{
+	background: transparent;
+	color:#90EE90;
+	cursor:pointer;
+}
+
+@keyframes gotosummarizer {
+    0% {
+        opacity: 0;
+		margin-top:-1%;
+    }
+    100% {
+        opacity: 1;
+		margin-top:0%;
+     }
+}
+/*FREE SERVICE*/
+
+
+.main_div_login{
+	overflow-x:hidden;
+	overflow-y:hidden;
+	background: white;
+	width: 10 0%;
+	height: 120%;
+	padding-top:10%;
+	padding-bottom:10%;
+	padding-right:10%;
+	padding-left:0;
+	box-sizing:border-box;
+	background:url("/assets/login.png");
+	background-size:contain;
+	background-position:top-center;
+	background-repeat:no-repeat;
+	margin-left:0;
+	margin-bottom:-8%;
+	
+}
+
+.signin_container{
+	position:absolute;
+	background:linear-gradient(rgb(57,114,134,1),rgb(0,117,54,1),rgb(144,238,144,0.6));
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center;
+	margin-left:4%;
+	height:80vh;
+	transform:translate(200%,-110%);
+	width:30%;
+	box-sizing:border-box;
+	outline:none;
+	border:none;
+	box-shadow:2px 4px 5px 2px rgba(0, 0, 0, 0.3);
+	caret-color:transparent;
+}
+.signup{
+	height:100%;
+	width:100%;
+	outline:none;
+	border:none;
+	background:transparent;
+}
+.login{
+	height:100%;
+	width:100%;
+	outline:none;
+	border:none;
+	background:transparent;
+}
+
+/**************************************LOGIN*INPUTS****************************************/
+.login_inputs{
+	display:block;
+	top:20%;
+	left:15%;
+	width:70%;
+	position:Absolute;
+}
+.login_inputs input{
+	display:block;
+	color:white;
+	outline:none;
+	background:transparent;
+	border-bottom:2px solid white;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	padding-left:2%;
+	width:100%;
+	margin-top:10%;
+	caret-color:#2CBD0F;
+}
+.login_inputs input:active{
+	background:rgb(0,0,0,0.5);
+}
+.login_inputs input:hover{
+	background:rgb(0,0,0,0.5);
+}
+/**************************************LOGIN*INPUTS****************************************/
+/**************************************SHOW*PASSWORD*DESIGN*CUSTOM*LOGIN**************************************/
+.show_password{
+	position:Absolute;
+	top:110%;
+	background:transparent;
+	display:grid;
+	width:100%;
+	grid-template-columns:10% 80%;
+	color:white;
+	text-decoration:underline;
+}
+.checkbox_control{
+	font-family: system-ui, sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	line-height: 1.1;
+	display: grid;
+	grid-template-columns: 1em auto;
+	gap: 0.5em;
+}
+.checkbox_control + .checkbox_control{
+	margin-top: 1em;
+}
+.show_password input[type="checkbox"]{
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	margin: 0;
+	appearance: none;
+	background-color: #fff;
+	margin: 0;
+	font: inherit;
+	color: green;
+	width: 1.15em;
+	height: 1.15em;
+	border: 0.15em solid currentColor;
+	border-radius: 0.15em;
+	transform: translate(0.5em, 0.1em);
+	display: grid;
+	place-content: center;
+	
+}
+.show_password input[type="checkbox"]::before{
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--form-control-color);
+	background-color: #007536;
+    transform-origin: bottom left;
+
+	
+}
+.show_password input[type="checkbox"]:checked::before{
+	transform: scale(1);
+}
+/**************************************SHOW*PASSWORD*DESIGN*CUSTOM*LOGIN**************************************/
+/**************************************LOGIN*SUBMIT*BUTTON***************************************/
+.login_submit_div{
+	height:10%;
+	width:30%;
+	background-color:white;
+	position:fixed;
+	display:block;
+	top:70%;
+}
+.login_button{
+	height:100%;
+	width:100%;
+	outline:none;
+	border:none;
+	color:#007536;
+	font-weight:bold;
+	font-size:1.2vw;
+}
+.login_button:hover{
+	outline:2px solid #007536;
+	background:rgb(57,114,134,0.7);
+	color:white;
+}
+
+/**************************************LOGIN*SUBMIT*BUTTON***************************************/
+/**************************************SHOW*PASSWORD*DESIGN*CUSTOM*REGISTER**************************************/
+.view{
+  position: absolute;
+  top: 64%;
+  right: -1%;
+  height:8%;
+  width:8%;
+  z-index:2;
+  cursor: pointer;
+  background:url("/assets/view.png");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+
+.hide{
+  position: absolute;
+  top: 64%;
+  right: -1%;
+  height:8%;
+  width:8%;
+  z-index:2;
+  cursor: pointer;
+  background:url("/assets/hide.png");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+}
+.eye_button{
+	height:100%;
+	width:100%;
+	background:transparent;
+	outline:none;
+	border:none;
+}
+/**************************************SHOW*PASSWORD*DESIGN*CUSTOM*REGISTER**************************************/
+.login_title{
+	height:10%;
+	width:50%;
+	position: absolute;
+	top: 10%;
+	left:25%;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	background:linear-gradient(transparent,transparent,rgb(144,238,144,0.5));
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	
+}
+.login_title h5{
+	text-align: center;
+	align-items: center;
+	padding-top:2%;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	font-size: 2.5vw;
+	color: white;
+}
+
+/**dont_have_an_account_yet***/
+.dont_have_an_account_yet{
+	color:white;
+	position:fixed;
+	top:73%;
+	left:60%;
+}
+
+.dont_have_an_account_yet:hover{
+	color:#2CBD0F;
+}
+/**ALREADY HAVE AN ACCOUNT***/
+/*DANGER TEXT REQUIRED FIELDS*/
+.danger{
+	color:rgb(199, 18, 18);
+	font-size: 1vw;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/*DANGER TEXT REQUIRED FIELDS*/

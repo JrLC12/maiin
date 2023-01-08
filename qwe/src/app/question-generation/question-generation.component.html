@@ -1,0 +1,242 @@
+<html>
+
+<div class="modal_box_div" id="modal_box_div">
+	<div class="modal_box">
+		<div class="close_div" id="close">
+			<span class="close_x">X</span>
+			<div class="close_text">close</div>
+		</div>
+		<div class="category_div">
+			<div class="category"><button id="gen_w_choices" class="cat_button">Save as PDF with choices</button></div>
+			<div class="category"><button id="gen_wo_choices" class="cat_button">Save as PDF with out choices</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper" class="jumbotron" style="margin-bottom:0;">
+	<div id="hideMe" class="alert">
+		<strong id="hideMe">
+			<h6 id="text"></h6>
+		</strong>
+	</div>
+
+	<hr id="to-be-scrolled" style="border:2px solid #007536;caret-color:transparent;" />
+
+
+
+	<input type="checkbox" id="btnControl" />
+	<label for="btnControl" id="base">
+
+		<img src="assets/bot.png" onmouseenter="shakeit(this)" onmouseleave="shakeit_not(this)" id="shakeit"
+			class="robot">
+		<div class="text_cloud1" id="cloud1"></div>
+		<div class="text_cloud2" id="cloud2"></div>
+		<div class="text_cloud3" id="cloud3"></div>
+
+		<div class="big_cloud" id="big_cloud">
+			<h6 id="message__guide" readonly>Do you want me to guide you?</h6>
+			<button class="start_tut" id="start_tut" onclick="start()"><span>Start Tutorial</span></button>
+			<button class="cancel_tut" id="cancel_tut" onclick="no()"><span>No</span></button>
+			<button class="next_none" id="next"><span>Next&#8594;</span></button>
+			<button class="next_none2" id="next2"><span>Next&#8594;</span></button>
+			<button class="next_none3" id="next3"><span>Next&#8594;</span></button>
+			<button class="next_none4" id="next4"><span>Next&#8594;</span></button>
+			<button class="next_none5" id="next5"><span>Next&#8594;</span></button>
+			<button class="next_none6" id="next6"><span>Next&#8594;</span></button>
+			<button class="next_none7" id="next7"><span>Next&#8594;</span></button>
+			<button class="done_none" id="done"><span>Done</span></button>
+		</div>
+		<img class="img_save_as_none" id="img_save_as" src="assets/save_as.png">
+		<div class="bot_div">
+
+		</div>
+
+	</label>
+
+
+
+	<div class="card"
+		style="height:50%;width:100%;display:flex;justify-content:flex-start;overflow-y:hidden;box-shadow: 2px 4px 4px rgb(0,0,0,0.5);">
+		<div class="card-body" style="width:50%;border:2px solid #90EE90;caret-color:green;">
+			<h3 class="fw-bolder font-monospace text-muted" style="text-align: center;caret-color:transparent;"> Start
+				by typing or pasting something into this box, then click generate.</h3>
+			<textarea style="height: 240px; margin-bottom: 10px;border:2px solid #90EE90" id="message" #text
+				class="form-control" rows="6" placeholder="Document text ..."></textarea>
+
+			<div id="character-counter-container">
+				<div id="character-counter">
+					<span id="typed-characters">0</span>
+					<span>/</span>
+					<span id="maximum-characters">9999</span>
+					<div id="danger_div">
+
+						<div id="danger" class="danger"></div>
+						<div id="warning" class="warning"></div>
+						<div id="check" class="check"></div>
+						<div class="danger_text"><span id="danger_text"></span></div>
+					</div>
+				</div>
+			</div>
+			<!---->
+			<input style="width: 200px; height: 50px; float: left; margin-right: 10px;border:2px solid #90EE90 " #count
+				type="number" class="form-control mb-2" placeholder="Number of questions ...">
+			<button (click)="generate(text.value, count.value)" type="button"
+				class="btn btn-primary btn-lg btn-block mt-2" style="background:#007536;">Generate
+			</button>
+
+		</div>
+
+		<!--GENERATED QUESTION IN BOX-->
+		<div class="card"
+			style="margin-left:50%;margin-top:0;position:absolute;height:100%;width:50%;
+			border-left:none;border-top:2px solid #90EE90;border-right:2px solid #90EE90;border-bottom:2px solid #90EE90;border-radius:0;">
+
+
+			<div class="card-body inner_box">
+				<div style="height: 100%; margin-bottom: 10px;">
+
+					<div id="loading"></div><!--loading-->
+					<span class="generating" id="generating"><img src="assets/gear.gif" style="height: 100px;"></span>
+					<div style="width: 1200px;" id="questionBox" *ngIf="questions">
+
+						<div class="questionBox" *ngFor="let question of questions; let i = index">
+
+							<div class="card-body" style="width:70%;">
+								<h6 class="card-title h6_question_box" style="width:50%;">{{i + 1}}.
+									{{question.questionText}}</h6>
+							</div>
+
+
+							<div class="answerBox" style="width:73%;">
+								<input type="text" value={{question.answerText}} class="form-control is-valid"
+									id="inputValid" style="width:53%;">
+							</div><br>
+
+							<div *ngFor='let distractor of question.distractors' class="answerBox" style="width:73%;">
+								<input type="text" value={{distractor}} class="form-control "
+									id="inputInvalid" style="width:53%;">
+							</div>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<!--<div class="button_bg" id="save-pdf"><button class="save-as-pdf"></button></div>-->
+	<div class="button_bg" id="choose_cat"><button class="save-as-pdf"></button></div>
+
+	<div style="display:none;"> <!--tosave-invisible-GENERATED QUESTION-->
+		<div id="tosave">
+			<div style="width: 1200px;" id="questionsBox" *ngIf="questions">
+				<div class="card-body">
+					<h6 class="card-title">Multiple Choices</h6>
+				</div>
+				<div class="questionBox" *ngFor="let question of questions; let i = index">
+					<div class="card-body">
+						<h6 class="card-title">{{i + 1}}. {{question.questionText}}</h6>
+					</div>
+
+					<div>
+
+						<div *ngFor='let distractor of question.distractors;let i = index'
+							class="card-body" >
+
+							<h6 class="card-title" id="inputInvalid">{{letters[i]}}) {{distractor}} </h6>
+
+						</div>
+					</div>
+
+					<br>
+				</div>
+			</div>
+			<!--<div class="answerBox">
+                <input type="text" class="form-control is-default" placeholder="Add answer..." id="inputDefault">
+
+            <button style="width: 150px; float:right; margin: 10px;" type="button" class="btn btn-primary Approve">Approve</button>
+            </div>-->
+			<div style="width: 1200px;" id="questionsBox" *ngIf="questions">
+				<div class="card-body">
+					<h6 class="card-title"> ANSWERS</h6>
+				</div>
+				<div class="questionBox" *ngFor="let question of questions;let i = index">
+					<div class="card-body">
+						<h6 class="card-title">{{i + 1}}. &nbsp;{{question.answerText}}</h6>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-------------------------------------------------------WITHOUT CHOICES--------------------------------------------------------------->
+	<div style="display:none;"> <!--tosave-invisible-GENERATED QUESTION-->
+		<div id="tosave2">
+			<div style="width: 1200px;" id="questionsBox" *ngIf="questions">
+				<div class="card-body">
+					<h6 class="card-title">Identification</h6>
+				</div>
+				<div class="questionBox" *ngFor="let question of questions; let i = index">
+					<div class="card-body">
+						<h6 class="card-title">{{i + 1}}. {{question.questionText}}</h6>
+					</div>
+
+
+					<!--<div class="answerBox">
+                <input type="text" class="form-control is-default" placeholder="Add answer..." id="inputDefault">
+
+            <button style="width: 150px; float:right; margin: 10px;" type="button" class="btn btn-primary Approve">Approve</button>
+            </div>-->
+
+				</div>
+			</div>
+
+			<div style="width: 1200px;" id="questionsBox" *ngIf="questions">
+				<div class="card-body">
+					<h6 class="card-title"> ANSWERS</h6>
+				</div>
+				<div class="questionBox" *ngFor="let question of questions;let i = index">
+					<div class="card-body">
+						<h6 class="card-title">{{i + 1}}. &nbsp;{{question.answerText}}</h6>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-------------------------------------------------------WITHOUT CHOICES--------------------------------------------------------------->
+
+
+	<!--<div id="questionsBox" *ngIf="questions" class="tryme">
+        <div *ngFor="let question of questions; let i = index">
+                <div class="questionBox" class="card mb-3">
+                        <h5 class="card-header">Question {{i + 1}}</h5>
+            
+                        <div class="card-body">
+                          <h6 class="card-title"> {{question.questionText}}</h6>
+                        </div>
+            
+            
+                        <div *ngFor='let answer of question.answers' class="answerBox">
+                            <button (click)="checkAnswer(question, answer)" type="button" class="btn btn-primary ">{{answer}}</button>
+                        </div>
+            
+            
+                </div>                        
+        </div>
+
+    </div> -->
+
+</div>
+
+</html>

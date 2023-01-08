@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>TEXT SUMMARIZER</title>
+  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/unicons.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="icon"  type="image/x-icon" href="favicon.ico" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <style>
+    body {
+      background-color: #eee;
+      font-family: sans-serif;
+	  
+    }
+    .flex-parent {
+      display: flex;
+    }
+    .jc-center {
+      justify-content: center;
+    }
+    footer {
+    text-align: center;
+    text-shadow:black;
+    padding: 3px;
+    color: whitesmoke;
+  }
+  .flex-parent {
+      display: flex;
+    }
+	 
+    footer {
+    text-align: center;
+    text-shadow:black;
+    padding: 3px;
+    color: whitesmoke;
+  }
+#hideMe {
+    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        visibility:hidden;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+       visibility:hidden;
+        overflow:hidden;
+    }
+}
+.alert {
+	font-family:MONOSPACE;
+    position:fixed;
+	text-align:center;
+	height:8%;
+	width:35%;
+	padding: 15px 20px;
+	margin-top:-45%;
+	margin-left:30%;
+	z-index:2;
+	background:rgb(0,117,54,0.5);
+	color: white;
+ 
+
+}
+.tut-1-div{
+	position:absolute;
+	height:25%;
+	width:20%;
+	padding:1%;
+	justify-content:center;
+	background:transparent;
+	margin-left:5%;
+	margin-top:22%;
+	box-sizing:border-box;
+}	
+.tut-1{
+	color:white;
+	font-size:1.5vw;
+	margin:0;
+	padding:0;
+}
+.tut-2-div{
+	position:absolute;
+	white-space: normal;
+	word-spacing:normal;
+	height:25%;
+	width:20%;
+	padding:1%;
+	justify-content:center;
+	background:transparent;
+	margin-left:33%;
+	margin-top:22%;
+	box-sizing:border-box;
+}	
+.tut-2{
+	color:white;
+	font-size:1.5vw;
+}
+.tut-3-div{
+	position:absolute;
+	height:25%;
+	width:20%;
+	padding:1%;
+	justify-content:center;
+	background:transparent;
+	margin-left:61%;
+	margin-top:22%;
+	box-sizing:border-box;
+}	
+.tut-3{
+	color:white;
+	font-size:1.5vw;
+}
+.first-step{
+	background:url("/static/images/copy.png");
+	background-size:contain;
+	background-repeat:no-repeat;
+	position:absolute;
+	margin:10% 11%;
+	height:30%;
+	width:10%;
+	outline:none;
+	box-sizing:border-box;
+}
+.fake-button{/*Second-step fake generate button*/
+	height:10%;
+	width:15%;
+	background-color:transparent;
+	box-shadow:0px 5px 5px #90EE90;
+	border:5px solid white;
+	outline:none;
+	border-radius:10px;
+	color:white;
+	position:Absolute;
+	margin-left:35%;
+	margin-top:15%;
+}
+.third-step{
+	background:url("/static/images/pdf.png");
+	background-size:contain;
+	background-repeat:no-repeat;
+	margin:10% 65%;
+	height:30%;
+	width:10%;
+	outline:none;
+	position:absolute;
+}
+.line-mixed{
+	width:100%;
+	height:1%;
+	position:absolute;
+	background:linear-gradient(black,#282E34);
+
+}
+.second-picture{
+	opacity:0.65;
+	background-image:url('./static/images/second-picture.png');
+	background-size:cover;
+	background-position:top;
+	width: 100%;
+	height: 70vh;
+	background-attachment:fixed;
+}
+.third-picture{
+	opacity:0.65;
+	background-image:url("/static/images/third-picture.png");
+	background-size:cover;
+	background-position:top;
+	width: 100%;
+	height: 70vh;
+	background-attachment:fixed;
+}
+.second-text{
+	height:30vh;
+	background:#282E34;
+	width: 100%;
+	text-align:justify;
+	justify-content:content;
+	padding:2% 2%;
+}
+.second-text span{
+	color:#ddd;
+	font-size:1.2vw;
+	 word-wrap: break-word;
+	
+}
+.second-text h2{
+	color:#ddd;
+}
+.first-text{
+	height:100vh;
+	background:#282E34;
+	width: 100%;
+	text-align:justify;
+	padding:50px 80px;
+}
+.first-picture{
+	opacity:0.65;
+	background-image:url("/static/images/second-picture.png");
+	background-size:cover;
+	width: 100%;
+	height: 70vh;
+	background-attachment:fixed;
+}
+
+.circles{
+    position: absolute;
+    top: 168%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+.generating{
+	font-size:1vw;
+
+	position:absolute;
+	margin-top:20%;
+	margin-left:35%;
+}
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+  </style>
+  
+ <div class="navbar-fixed" >
+    <nav class="grey lighten-4" style="box-shadow: 5px 10px 8px -5px #;" role="navigation">
+	
+      <div class="nav-wrapper container" >
+        <a style="color: black; text-decoration: none; font-size: 20px;" href="#" class="brand-logo">Summarizer Logo</a>
+        <ul class="right hide-on-med-and-down"style="text-align: center;">
+          <li  ><a  style="color: black; font-weight: bold; text-decoration: none;" href="{{url_for('index')}}">HOME</a></li>
+		  <li><a style="color: black; font-weight: bold; text-decoration: none;" href="{{url_for('compare_summary')}}">MORE</a></li>
+          <li><a  style="color: black; font-weight: bold; text-decoration: none;" href="#aboutapp">ABOUT US</a></li>
+          <li><a  style="color: black; font-weight: bold; text-decoration: none;" href="http://localhost:4200/">QG.AI</a></li>
+        </ul>
+        <a href="#" style="color: black; font-weight: bold; text-decoration: none;" data-target="nav-mobile" class="sidenav-trigger">MENU</a>
+      </div>
+    </nav>
+  </div>
+  
+ <ul id="nav-mobile" class="sidenav">
+    <li><a style="color: black; font-weight: bold; text-decoration: none;" href="{{url_for('index')}}">HOME</a></li>
+	<li><a style="color: black; font-weight: bold; text-decoration: none;" href="{{url_for('compare_summary')}}">MORE</a></li>
+    <li><a style="color: black; font-weight: bold; text-decoration: none;" href="#contactme">ABOUT US</a></li>
+    <li><a style="color: black; font-weight: bold; text-decoration: none;" href="http://localhost:4200/">QG.AI</a></li>
+  </ul>
+
+<div class="container mt-5 mb-5" style="height: 50%;">
+			<div class="card" style="height:50%;width:100%;display:flex;justify-content:flex-start;overflow-y:hidden;">
+				<div  class="card-body" style="width:50%;box-shadow: 5px 10px 8px -5px #ccc;">
+			
+					 <form method="POST" action="/comparer">
+            <textarea name="rawtext" cols="10" rows="10" style="color: black;" class="form-control" required="true" placeholder="Enter your text here" ></textarea>
+            <br/>
+            <div class="flex-parent jc-center">
+             <button type="submit" class="btn btn-primary btn-md btn-block mt-2" style="background:#328164;  border-radius: 10px;">SUMMARIZE</button>
+            </div>
+          </form>
+				
+			</div>
+			
+		<!--GENERATED QUESTION IN BOX-->
+		<div class="card" style="margin-left:50%;box-shadow: 5px 10px 8px -5px #ccc;margin-top:0;position:absolute;height:100%;width:50%;" >
+				
+		
+				<div  class="card-body inner_box" >
+				
+					<div  style="height: 100%; margin-bottom: 10px; overflow-y:auto;" >
+							 
+						<section class="section section-solutions-about #fafafa grey lighten-5">
+  <div class="container">
+    <div class="row">
+      <div class="row">
+          <div class="col s12">
+            <ul class="tabs" >
+              <li class="tab col s3">
+                <a href="#tab1" class="black-text"><b>OUTPUT 1</b></a>
+              </li>
+              <li class="tab col s3">
+                <a href="#tab2" class="black-text"><b>OUTPUT 2</b></a>
+              </li>
+              <li class="tab col s3">
+                <a href="#tab3" class="black-text"><b>OUTPUT 3</b></a>
+              </li>
+              <li class="tab col s3">
+                <a href="#tab4" class="black-text"><b>OUTPUT 4</b></a>
+              </li>
+            </ul>
+          </div>
+         
+        </div>
+		 <div id="tab1" class="col s12">
+            <div class=""><p>READING TIME: <span style="color:#0091EA;">{{ summary_reading_time_gensim }} MINUTES </span></p>
+            </div>
+            <div class="grey darken-3"><p style="padding:5px; font-size:14px; color: #ffffff;">{{ final_summary_gensim }}</p>
+            </div>
+          </div>
+          <div id="tab2" class="col s12">
+            <div class=""><p>READING TIME: <span style="color:#0091EA;">{{ summary_reading_time_nltk }} MINUTES </span></p>
+            </div>
+            <div class="grey darken-3"><p style="padding:5px; font-size:14px; color: #ffffff;">{{ final_summary_nltk }}</p>
+            </div>
+          </div>
+          <div id="tab3" class="col s12">
+            <div class="" ><p>READING TIME: <span style="color:#0091EA;">{{ summary_reading_time }} MINUTES  </span></p>
+            </div>
+            <div class="grey darken-3"><p style="padding:5px; font-size:14px; color: #ffffff;">{{ final_summary_spacy }}</p>
+            </div>
+          </div>
+          <div id="tab4" class="col s12">
+            <div class=""><p>READING TIME: <span style="color:#0091EA;">{{ summary_reading_time_sumy}} MINUTES </span></p>
+            </div>
+            <div class="grey darken-3"><p style="padding:5px; font-size:14px; color: #ffffff;">{{ final_summary_sumy }}</p>
+            </div>
+          </div>
+    </div>
+  </div>
+</section>
+					</div>
+				</div>
+			</div>
+			</div>
+</div>
+</div>
+ <div class="second-text" style="background-color: white;">
+		<center><p style="font-weight: 400; font-size: 24px;color: black; font-family: Open Sans',sans-serif;color: #252525; "> What is Question Generator.ai?</p></center>
+		<span style="font-family: Open Sans,sans-serif; font-weight: 400;color: #252525;">
+		QuillBot's AI-powered paraphrasing tool will enhance your writing
+Your words matter, and our paraphrasing tool is designed to ensure you use the right ones. With two free modes and five Premium modes to choose from, you can use QuillBot’s online Paraphraser to rephrase any text in a variety of ways. Our product will improve your fluency while also ensuring you have the appropriate vocabulary, tone, and style for any occasion. Simply enter your text into the input box, and our AI will work with you to create the best paraphrase. </span>
+</div>
+
+
+
+
+
+<div id="to-be-scrolled" class="first-text">
+
+           
+	<div class="first-step"></div>
+		<div class="tut-1-div">	
+			<span class="tut-1"> <b>Type</b> or <b>Copy</b> any resources that you want to <b>Summarize</b> and then <b>paste</b> it in the text box.</span>
+		</div>
+		
+	<button type="submit" class="fake-button">Summarize</button>
+		<div class="tut-2-div">	
+			<span class="tut-2"> After <b>typing</b> or <b>pasting</b> any resources, click the <b>Summarize</b><span style="font-size:1.5vw;margin-left:2%;">button</span>. Generating questions will took a while </span>
+		</div>
+	<div class="third-step"></div>
+		<div class="tut-3-div">	
+			<span class="tut-3"> When generating is finished, click the <b>"save as pdf"</b> button to save it as a pdf file. </span>
+		</div>	
+ <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+</div>
+<div class="second-picture" >
+	
+</div>
+<div class="second-text" >
+		<h2> What is Question Generator.ai?</h2>
+		<span>
+		&nbsp;&nbsp;&nbsp;&nbsp;Question Generator.ai is a tool that provides efficiency when it comes to creating exams and quizzes.
+		It helps to create a number of questions just by copying and pasting your &nbsp;&nbsp;&nbsp;&nbsp;selected topic to our generating text box and by clicking the generate button.
+		The number of questions generated depends on the number of questions that will be inserted. </span>
+</div>
+<div class="third-picture">
+
+</div>
+<div class="second-text" >
+		<h2>Say "Goodbye" by using Question Generator.ai</h2>
+		<span>&nbsp;&nbsp;&nbsp;&nbsp;Say "Goodbye" to the tiring, grueling, inefficient, and time-consuming way of creating your exams and quizzes by using the Question Generator.ai tools.</span>
+</div>
+<div class="first-picture">
+
+</div>
+<!-- Footer -->
+<footer class="bg-dark text-center text-white grey darken-4" id="aboutapp">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg></i
+      ></a>
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+  <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+</svg></i
+      ></a>
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+</svg></i
+      ></a>
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+</svg></i
+      ></a>
+    </section>
+    <section class="mb-4">
+      <p style="caret-color:transparent;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+        eum harum corrupti dicta, aliquam sequi voluptate quas.
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">QuestionsGenerator.ai</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="static/js/materialize.js"></script>
+    <script src="static/js/init.js"></script>
+  
+    </body>
+  </html>
